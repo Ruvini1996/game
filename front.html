@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Lottery Dapp</title>
+</head>
+<body>
+    <h1>Lottery Dapp</h1>
+    <p>Ticket price: <span id="ticketPrice"></span> ETH</p>
+    <p>Ticket count: <span id="ticketCount"></span> / <span id="maxTicketCount"></span></p>
+    <p>Prize pool: <span id="prizePool"></span> ETH</p>
+    <p><button id="buyButton" onclick="buyTicket()">Buy Ticket</button></p>
+    <p><button id="withdrawButton" onclick="withdraw()">Withdraw</button></p>
+    
+    <script>
+        const contractAddress = "ENTER CONTRACT ADDRESS HERE";
+        const contractABI = [
+            {
+                "inputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "_ticketPrice",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "_maxTicketCount",
+                        "type": "uint256"
+                    }
+                ],
+                "stateMutability": "nonpayable",
+                "type": "constructor"
+            },
+            {
+                "inputs": [],
+                "name": "buyTicket",
+                "outputs": [],
+                "stateMutability": "payable",
+                "type": "function"
+            },
+            {
+                "inputs": [],
+                "name": "owner",
+                "outputs": [
+                    {
+                        "internalType": "address",
+                        "name": "",
+                        "type": "address"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [],
+                "name": "ticketCount",
+                "outputs": [
+                    {
+                       
